@@ -45,3 +45,18 @@ li {
   padding: 10px;
   margin-bottom: 10px;
 }
+
+nav {
+  margin: 20px 0;
+}
+
+nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #0070f3;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+

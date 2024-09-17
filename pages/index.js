@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import { useState } from 'react';
+import Navigation from '../components/Navigation';
 
 export default function Home() {
   const [busNumber, setBusNumber] = useState('');
@@ -34,6 +36,7 @@ export default function Home() {
   return (
     <div>
       <h1>Bus Scheduler</h1>
+      <Navigation />
       <form onSubmit={handleSubmit}>
         <div>
           <label>Bus Number:</label>
