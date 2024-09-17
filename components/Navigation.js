@@ -6,7 +6,8 @@ export default function Navigation() {
       <Link href="/">Home</Link> | 
       <Link href="/scheduleList">View Schedules</Link> | 
       <Link href="/contact">Contact</Link> | 
-      <Link href="/about">About</Link>
+      <Link href="/about">About</Link> | 
+      <Link href="/directions">Directions</Link>
     </nav>
   );
 }
