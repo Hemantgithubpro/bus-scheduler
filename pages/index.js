@@ -34,37 +34,64 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <h1>Bus Scheduler</h1>
+    <div style={{ margin: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h1 style={{ textAlign: 'center', color: '#333' }}>Bus Scheduler</h1>
       <Navigation />
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Bus Number:</label>
-          <input type="text" value={busNumber} onChange={(e) => setBusNumber(e.target.value)} />
+      <form onSubmit={handleSubmit} style={{ maxWidth: '400px', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '8px' }}>
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Bus Number:</label>
+          <input
+            type="text"
+            value={busNumber}
+            onChange={(e) => setBusNumber(e.target.value)}
+            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+          />
         </div>
-        <div>
-          <label>Start Time:</label>
-          <input type="time" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Start Time:</label>
+          <input
+            type="time"
+            value={startTime}
+            onChange={(e) => setStartTime(e.target.value)}
+            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+          />
         </div>
-        <div>
-          <label>End Time:</label>
-          <input type="time" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>End Time:</label>
+          <input
+            type="time"
+            value={endTime}
+            onChange={(e) => setEndTime(e.target.value)}
+            style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
+          />
         </div>
-        <div>
-          <label>Bus Stops:</label>
+        <div style={{ marginBottom: '15px' }}>
+          <label style={{ display: 'block', marginBottom: '5px' }}>Bus Stops:</label>
           {busStops.map((stop, index) => (
-            <div key={index}>
+            <div key={index} style={{ marginBottom: '10px' }}>
               <input
                 type="text"
                 value={stop.stopName}
                 onChange={(e) => handleStopChange(index, e)}
                 placeholder={`Bus Stop ${index + 1}`}
+                style={{ width: '100%', padding: '8px', borderRadius: '4px', border: '1px solid #ccc' }}
               />
             </div>
           ))}
-          <button type="button" onClick={handleAddStop}>Add Stop</button>
+          <button
+            type="button"
+            onClick={handleAddStop}
+            style={{ padding: '8px 16px', backgroundColor: '#007bff', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
+          >
+            Add Stop
+          </button>
         </div>
-        <button type="submit">Schedule Bus</button>
+        <button
+          type="submit"
+          style={{ padding: '10px 20px', backgroundColor: '#28a745', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', width: '100%' }}
+        >
+          Schedule Bus
+        </button>
       </form>
     </div>
   );
